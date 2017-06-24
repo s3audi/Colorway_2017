@@ -1,0 +1,52 @@
+<?php
+/**
+ * The Footer widget areas.
+ *
+ * @package WordPress
+ */
+/* The footer widget area is triggered if any of the areas
+ * have widgets. So let's check that first.
+ *
+ * If none of the sidebars have widgets, then let's bail early.
+ */
+if (!is_active_sidebar('first-footer-widget-area') && !is_active_sidebar('second-footer-widget-area') && !is_active_sidebar('third-footer-widget-area') && !is_active_sidebar('fourth-footer-widget-area')
+)
+    return;
+// If we get this far, we have widgets. Let do this.
+?>
+<div class="grid_6 alpha">
+    <div class="common left">
+        <?php
+        if (is_active_sidebar('first-footer-widget-area')) :
+            dynamic_sidebar('first-footer-widget-area');
+        endif;
+        ?>
+    </div>
+</div>
+<div class="grid_6">
+    <div class="common second">
+        <?php
+        if (is_active_sidebar('second-footer-widget-area')) :
+            dynamic_sidebar('second-footer-widget-area');
+        endif;
+        ?>
+    </div>
+</div>
+<div class="grid_6">
+    <div class="common third">
+        <?php
+        if (is_active_sidebar('third-footer-widget-area')) :
+            dynamic_sidebar('third-footer-widget-area');
+        endif;
+        ?>
+    </div>
+</div>
+<div class="grid_6 omega">
+    <div class="common right">
+        <?php
+        if (is_active_sidebar('fourth-footer-widget-area')) :
+            dynamic_sidebar('fourth-footer-widget-area');
+        endif;
+        ?>
+    </div>
+</div>
